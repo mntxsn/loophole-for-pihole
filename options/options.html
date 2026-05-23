@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loophole for Pi-hole – Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1 data-i18n="optionsTitle">Loophole for Pi-hole</h1>
+    <p class="muted" data-i18n="optionsIntro">
+      Connects to your Pi-hole's v6 API. Credentials are stored locally in this
+      browser profile and never leave your machine.
+    </p>
+
+    <form id="settings-form">
+      <label>
+        <span data-i18n="optionsLabelLanguage">Language</span>
+        <select id="uiLocale">
+          <option value="auto" data-i18n="optionsLanguageAuto">Automatic (follow browser)</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+        </select>
+        <small class="muted" data-i18n="optionsHintLanguage">Default follows your browser locale. Override if you'd rather pick the language explicitly. Changing this reloads the settings page.</small>
+      </label>
+
+      <label>
+        <span data-i18n="optionsLabelUrl">Pi-hole base URL</span>
+        <input type="url" id="piholeUrl" placeholder="http://pi.hole" required>
+        <small class="muted" data-i18n="optionsHintUrl">e.g. http://pi.hole or https://10.0.0.2:443. No trailing slash needed.</small>
+      </label>
+
+      <label>
+        <span data-i18n="optionsLabelPassword">Pi-hole password (app password recommended)</span>
+        <input type="password" id="piholePassword" autocomplete="off">
+        <small class="muted" data-i18n="optionsHintPassword">
+          Pi-hole v6 lets you generate dedicated app passwords under Settings → Web interface / API → Application password.
+          Use one of those here — it bypasses 2FA/TOTP and stays valid even if you rotate your main login.
+          Leave empty if your Pi-hole has no password configured.
+        </small>
+      </label>
+
+      <label>
+        <span data-i18n="optionsLabelClientIp">Your client IP (optional)</span>
+        <input type="text" id="clientIp" placeholder="e.g. 192.168.1.42">
+        <small class="muted" data-i18n="optionsHintClientIp">
+          If set, only blocked queries from this IP are considered. Leave blank to use all clients.
+        </small>
+        <button type="button" id="detect-ip" class="secondary" data-i18n="optionsDetectIp">Detect from Pi-hole</button>
+      </label>
+
+      <label>
+        <span data-i18n="optionsLabelScanWindow">Scan window (seconds)</span>
+        <input type="number" id="scanWindowSeconds" min="5" max="300" step="5">
+        <small class="muted" data-i18n="optionsHintScanWindow">How far back to look for blocked queries when the popup opens.</small>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" id="showBadge">
+        <span data-i18n="optionsLabelShowBadge">Show failure count badge on toolbar icon</span>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" id="strictMatch">
+        <span data-i18n="optionsLabelStrictMatch">Only suggest domains the browser actually requested in this tab</span>
+      </label>
+      <small class="muted indent" data-i18n="optionsHintStrictMatch">
+        Recommended. Filters out unrelated DNS noise from other apps (Slack, WhatsApp, Spotify, OS telemetry, …)
+        that share your Pi-hole client IP. Turn off to see every blocked query from your IP in the time window —
+        useful for debugging, noisy in normal use.
+      </small>
+
+      <div class="actions">
+        <button type="submit" class="primary" data-i18n="optionsSave">Save</button>
+        <button type="button" id="test-connection" class="secondary" data-i18n="optionsTestConnection">Test connection</button>
+      </div>
+    </form>
+
+    <div id="status" class="status" hidden></div>
+
+    <section class="recent">
+      <h2 data-i18n="optionsRecentTitle">Recently allowed</h2>
+      <p class="muted" id="recent-empty" data-i18n="optionsRecentEmpty" hidden>Nothing allowed yet.</p>
+      <ul id="recent-list"></ul>
+    </section>
+
+    <section class="recent">
+      <h2 data-i18n="optionsMutedTitle">Muted suggestions</h2>
+      <p class="muted" id="muted-empty" data-i18n="optionsMutedEmpty" hidden>No domains muted.</p>
+      <ul id="muted-list"></ul>
+    </section>
+  </main>
+
+  <template id="recent-template">
+    <li class="recent-item">
+      <div class="recent-main">
+        <span class="recent-domain"></span>
+        <span class="recent-meta muted"></span>
+      </div>
+      <button class="link undo" data-i18n="optionsRecentUndo">Undo</button>
+    </li>
+  </template>
+
+  <template id="muted-template">
+    <li class="recent-item">
+      <div class="recent-main">
+        <span class="recent-domain"></span>
+      </div>
+      <button class="link unmute" data-i18n="optionsMutedUnmute">Unmute</button>
+    </li>
+  </template>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+{
+  "extensionName": {
+    "message": "Loophole for Pi-hole"
+  },
+  "extensionDescription": {
+    "message": "Erkennt durch Pi-hole kaputte Seiten und schlägt vor, welche blockierten Domains du erlauben solltest – sortiert nach Wahrscheinlichkeit, ein Klick zum Whitelisten."
+  },
+  "commandOpenPopup": {
+    "message": "Loophole for Pi-hole öffnen"
+  },
+
+  "popupRefreshTitle": {
+    "message": "Aktualisieren"
+  },
+  "popupReloadBarText": {
+    "message": "Allowlist aktualisiert. Seite neu laden zum Testen."
+  },
+  "popupReloadTab": {
+    "message": "Tab neu laden"
+  },
+  "popupEmptyTitle": {
+    "message": "Keine Vorschläge."
+  },
+  "popupEmptyHint": {
+    "message": "Lade die scheinbar kaputte Seite neu und öffne das Popup erneut."
+  },
+  "popupManualPlaceholder": {
+    "message": "Domain manuell hinzufügen…"
+  },
+  "popupManualWildcardLabel": {
+    "message": "*.site"
+  },
+  "popupManualSubmit": {
+    "message": "Erlauben"
+  },
+  "popupSettings": {
+    "message": "Einstellungen"
+  },
+  "popupSuggestionAllow": {
+    "message": "Erlauben"
+  },
+  "popupSuggestionAllowAnyway": {
+    "message": "Trotzdem erlauben"
+  },
+  "popupSuggestionMuteTitle": {
+    "message": "Vorschlag für immer ausblenden"
+  },
+  "popupAllowExists": {
+    "message": "Existiert"
+  },
+  "popupAllowSuccess": {
+    "message": "Erlaubt"
+  },
+  "popupAllowFailed": {
+    "message": "Fehler"
+  },
+  "popupStatusLoading": {
+    "message": "Lädt…"
+  },
+  "popupStatusConfigure": {
+    "message": "Trage zuerst die Pi-hole-URL in den Einstellungen ein."
+  },
+  "popupStatusInternalTab": {
+    "message": "Öffne eine reguläre http(s)-Seite, um diese Erweiterung zu nutzen."
+  },
+  "popupStatusNoQueries": {
+    "message": "Keine DNS-Abfragen von $IP$ im Zeitfenster. Nutzt dieser Rechner wirklich Pi-hole als DNS-Resolver?",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "popupPageHostPrefix": {
+    "message": "auf $HOST$",
+    "placeholders": {
+      "host": { "content": "$1" }
+    }
+  },
+  "popupAllowWholeSite": {
+    "message": "Ganze Domain erlauben (*.$ROOT$)",
+    "placeholders": {
+      "root": { "content": "$1" }
+    }
+  },
+  "popupReasonSubdomains": {
+    "message": "+$N$ Subdomain(s)",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "popupReasonRecently": {
+    "message": "$N$× kürzlich",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "popupReasonSameSite": {
+    "message": "Gleiche Basis-Domain wie die Seite"
+  },
+  "popupReasonDirectMatch": {
+    "message": "Browser hat diesen Request als fehlgeschlagen bestätigt"
+  },
+  "popupReasonDnsBlock": {
+    "message": "DNS-Lookup fehlgeschlagen (passt zu Pi-hole-Block)"
+  },
+  "popupReasonNotBlocked": {
+    "message": "$CATEGORY$ (nicht von Pi-hole blockiert)",
+    "placeholders": {
+      "category": { "content": "$1" }
+    }
+  },
+  "popupReasonFailed": {
+    "message": "Fehler: $ERROR$",
+    "placeholders": {
+      "error": { "content": "$1" }
+    }
+  },
+  "popupMetaSummary": {
+    "message": "$FAILED$ Fehler · $BLOCKED$ blockiert · seit $TIME$",
+    "placeholders": {
+      "failed": { "content": "$1" },
+      "blocked": { "content": "$2" },
+      "time": { "content": "$3" }
+    }
+  },
+  "popupMetaSummaryWithHidden": {
+    "message": "$FAILED$ Fehler · $BLOCKED$ blockiert · $HIDDEN$ ausgeblendet (andere Apps) · seit $TIME$",
+    "placeholders": {
+      "failed": { "content": "$1" },
+      "blocked": { "content": "$2" },
+      "hidden": { "content": "$3" },
+      "time": { "content": "$4" }
+    }
+  },
+  "popupManualErrorInvalid": {
+    "message": "Gib eine gültige Domain ein, z.B. example.com."
+  },
+
+  "optionsTitle": {
+    "message": "Loophole for Pi-hole"
+  },
+  "optionsIntro": {
+    "message": "Verbindet sich mit der Pi-hole v6-API. Zugangsdaten werden lokal in diesem Browser-Profil gespeichert und verlassen deinen Rechner nie."
+  },
+  "optionsLabelUrl": {
+    "message": "Pi-hole Basis-URL"
+  },
+  "optionsHintUrl": {
+    "message": "z.B. http://pi.hole oder https://10.0.0.2:443. Kein abschließender Slash nötig."
+  },
+  "optionsLabelPassword": {
+    "message": "Pi-hole-Passwort (App-Passwort empfohlen)"
+  },
+  "optionsHintPassword": {
+    "message": "Pi-hole v6 erlaubt es, dedizierte App-Passwörter unter Einstellungen → Web interface / API → Application password zu erzeugen. Nutze eines davon hier – es umgeht 2FA/TOTP und bleibt gültig, auch wenn du dein Haupt-Passwort änderst. Leer lassen, wenn dein Pi-hole kein Passwort hat."
+  },
+  "optionsLabelClientIp": {
+    "message": "Deine Client-IP (optional)"
+  },
+  "optionsHintClientIp": {
+    "message": "Wenn gesetzt, werden nur blockierte Anfragen von dieser IP betrachtet. Leer lassen, um alle Clients einzubeziehen."
+  },
+  "optionsDetectIp": {
+    "message": "Per Pi-hole erkennen"
+  },
+  "optionsLabelScanWindow": {
+    "message": "Scan-Fenster (Sekunden)"
+  },
+  "optionsHintScanWindow": {
+    "message": "Wie weit zurück nach blockierten Anfragen gesucht wird, wenn das Popup geöffnet wird."
+  },
+  "optionsLabelLanguage": {
+    "message": "Sprache"
+  },
+  "optionsLanguageAuto": {
+    "message": "Automatisch (Browser folgen)"
+  },
+  "optionsHintLanguage": {
+    "message": "Standardmäßig wird die Sprache des Browsers übernommen. Übersteuere die Auswahl, wenn du die Sprache explizit setzen möchtest. Eine Änderung lädt die Einstellungsseite neu."
+  },
+  "optionsLabelShowBadge": {
+    "message": "Zähler-Badge im Toolbar-Icon anzeigen"
+  },
+  "optionsLabelStrictMatch": {
+    "message": "Nur Domains vorschlagen, die der Browser in diesem Tab tatsächlich angefragt hat"
+  },
+  "optionsHintStrictMatch": {
+    "message": "Empfohlen. Filtert DNS-Rauschen von anderen Anwendungen (Slack, WhatsApp, Spotify, OS-Telemetrie, …) heraus, die sich deine Pi-hole-Client-IP teilen. Ausschalten, um jede blockierte Anfrage deiner IP im Zeitfenster zu sehen – nützlich zum Debuggen, im Alltag laut."
+  },
+  "optionsSave": {
+    "message": "Speichern"
+  },
+  "optionsTestConnection": {
+    "message": "Verbindung testen"
+  },
+  "optionsRecentTitle": {
+    "message": "Zuletzt erlaubt"
+  },
+  "optionsRecentEmpty": {
+    "message": "Noch nichts erlaubt."
+  },
+  "optionsRecentUndo": {
+    "message": "Rückgängig"
+  },
+  "optionsMutedTitle": {
+    "message": "Ausgeblendete Vorschläge"
+  },
+  "optionsMutedEmpty": {
+    "message": "Keine Domains ausgeblendet."
+  },
+  "optionsMutedUnmute": {
+    "message": "Wieder einblenden"
+  },
+  "optionsRecentMeta": {
+    "message": "$KIND$ · $WHEN$",
+    "placeholders": {
+      "kind": { "content": "$1" },
+      "when": { "content": "$2" }
+    }
+  },
+  "optionsStatusSaved": {
+    "message": "Einstellungen gespeichert."
+  },
+  "optionsStatusTesting": {
+    "message": "Teste…"
+  },
+  "optionsStatusSetUrlFirst": {
+    "message": "Setze zuerst die Pi-hole-URL."
+  },
+  "optionsStatusTestOk": {
+    "message": "Verbunden. $N$ Anfragen in den letzten 60 s erhalten.",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "optionsStatusGenericFailed": {
+    "message": "Fehler: $MSG$",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetecting": {
+    "message": "Erkenne Client-IP…"
+  },
+  "optionsStatusDetectSession": {
+    "message": "Client-IP erkannt (via Session): $IP$. Zum Speichern auf Speichern klicken.",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetectProbe": {
+    "message": "Client-IP erkannt (via DNS-Probe): $IP$. Zum Speichern auf Speichern klicken.",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetectFailed": {
+    "message": "Keine automatische Erkennung möglich. Nutzt dieser Rechner Pi-hole als DNS-Resolver? Du kannst die IP auch manuell eintragen."
+  },
+  "optionsStatusProbeNoIp": {
+    "message": "Probe gefunden, aber Client-IP fehlt in der Antwort."
+  },
+  "optionsStatusUndoFailed": {
+    "message": "Rückgängig fehlgeschlagen: $MSG$",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  }
+}

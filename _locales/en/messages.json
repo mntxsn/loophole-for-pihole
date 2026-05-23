@@ -1,0 +1,339 @@
+{
+  "extensionName": {
+    "message": "Loophole for Pi-hole",
+    "description": "Extension name shown in the browser."
+  },
+  "extensionDescription": {
+    "message": "Detects broken pages caused by Pi-hole and suggests which blocked domains to allow — ranked by confidence, one click to whitelist.",
+    "description": "One-sentence description shown in the add-on store and about:addons."
+  },
+  "commandOpenPopup": {
+    "message": "Open Loophole for Pi-hole",
+    "description": "Keyboard shortcut description."
+  },
+
+  "popupRefreshTitle": {
+    "message": "Refresh",
+    "description": "Tooltip for the refresh button in the popup."
+  },
+  "popupReloadBarText": {
+    "message": "Allowlist updated. Reload page to test.",
+    "description": "Banner shown after a successful allow action."
+  },
+  "popupReloadTab": {
+    "message": "Reload tab",
+    "description": "Button to reload the active tab after an allow action."
+  },
+  "popupEmptyTitle": {
+    "message": "No suggestions yet.",
+    "description": "Headline when there is nothing to suggest."
+  },
+  "popupEmptyHint": {
+    "message": "Reload the page that looks broken, then reopen this popup.",
+    "description": "Hint underneath the empty headline."
+  },
+  "popupManualPlaceholder": {
+    "message": "Add domain manually…",
+    "description": "Placeholder of the manual-add input."
+  },
+  "popupManualWildcardLabel": {
+    "message": "*.site",
+    "description": "Label next to the manual-add wildcard checkbox."
+  },
+  "popupManualSubmit": {
+    "message": "Allow",
+    "description": "Manual-add submit button."
+  },
+  "popupSettings": {
+    "message": "Settings",
+    "description": "Link to the options page."
+  },
+  "popupSuggestionAllow": {
+    "message": "Allow",
+    "description": "Default label of the allow button on each suggestion."
+  },
+  "popupSuggestionAllowAnyway": {
+    "message": "Allow anyway",
+    "description": "Allow-button label when the failure was not blocked by Pi-hole."
+  },
+  "popupSuggestionMuteTitle": {
+    "message": "Hide this suggestion forever",
+    "description": "Tooltip of the × mute button."
+  },
+  "popupAllowExists": {
+    "message": "Exists",
+    "description": "Allow button state when the domain was already on the allowlist."
+  },
+  "popupAllowSuccess": {
+    "message": "Allowed",
+    "description": "Allow button state on success."
+  },
+  "popupAllowFailed": {
+    "message": "Failed",
+    "description": "Allow button state on failure."
+  },
+  "popupStatusLoading": {
+    "message": "Loading…",
+    "description": "Status while the popup fetches data."
+  },
+  "popupStatusConfigure": {
+    "message": "Configure your Pi-hole URL in Settings first.",
+    "description": "Status shown when the Pi-hole URL is missing."
+  },
+  "popupStatusInternalTab": {
+    "message": "Open a regular http(s) page to use this extension.",
+    "description": "Status shown when the active tab is about:/moz-extension:/etc."
+  },
+  "popupStatusNoQueries": {
+    "message": "No DNS queries from $IP$ in the scan window. Is this machine actually using Pi-hole as its DNS resolver?",
+    "description": "Warning when the configured client IP returned zero queries.",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "popupPageHostPrefix": {
+    "message": "on $HOST$",
+    "description": "Shown next to the title to indicate the current tab's host.",
+    "placeholders": {
+      "host": { "content": "$1" }
+    }
+  },
+  "popupAllowWholeSite": {
+    "message": "Allow whole site (*.$ROOT$)",
+    "description": "Label of the wildcard-toggle on each suggestion.",
+    "placeholders": {
+      "root": { "content": "$1" }
+    }
+  },
+  "popupReasonSubdomains": {
+    "message": "+$N$ subdomain(s)",
+    "description": "Reason snippet when more than one subdomain is in the same group.",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "popupReasonRecently": {
+    "message": "$N$× recently",
+    "description": "Reason snippet showing how often the domain was queried.",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "popupReasonSameSite": {
+    "message": "Same registrable domain as the page",
+    "description": "Reason snippet when the candidate matches the page's registrable domain."
+  },
+  "popupReasonDirectMatch": {
+    "message": "Browser confirmed this request failed",
+    "description": "Reason snippet when the browser had a failure for this hostname."
+  },
+  "popupReasonDnsBlock": {
+    "message": "DNS lookup failed (matches Pi-hole block)",
+    "description": "Reason snippet for DNS-failure boost."
+  },
+  "popupReasonNotBlocked": {
+    "message": "$CATEGORY$ (not blocked by Pi-hole)",
+    "description": "Category shown when the failure has no matching Pi-hole block.",
+    "placeholders": {
+      "category": { "content": "$1" }
+    }
+  },
+  "popupReasonFailed": {
+    "message": "Failed: $ERROR$",
+    "description": "Reason snippet showing the browser error code.",
+    "placeholders": {
+      "error": { "content": "$1" }
+    }
+  },
+  "popupMetaSummary": {
+    "message": "$FAILED$ failed · $BLOCKED$ blocked · since $TIME$",
+    "description": "Footer meta when no other-app filtering happened.",
+    "placeholders": {
+      "failed": { "content": "$1" },
+      "blocked": { "content": "$2" },
+      "time": { "content": "$3" }
+    }
+  },
+  "popupMetaSummaryWithHidden": {
+    "message": "$FAILED$ failed · $BLOCKED$ blocked · $HIDDEN$ hidden (other apps) · since $TIME$",
+    "description": "Footer meta when the strict-match filter hid some suggestions.",
+    "placeholders": {
+      "failed": { "content": "$1" },
+      "blocked": { "content": "$2" },
+      "hidden": { "content": "$3" },
+      "time": { "content": "$4" }
+    }
+  },
+  "popupManualErrorInvalid": {
+    "message": "Enter a valid domain like example.com.",
+    "description": "Error shown when manual-add input is not a valid domain."
+  },
+
+  "optionsTitle": {
+    "message": "Loophole for Pi-hole",
+    "description": "Top headline of the settings page."
+  },
+  "optionsIntro": {
+    "message": "Connects to your Pi-hole's v6 API. Credentials are stored locally in this browser profile and never leave your machine.",
+    "description": "Intro paragraph on the settings page."
+  },
+  "optionsLabelUrl": {
+    "message": "Pi-hole base URL",
+    "description": "Label for the Pi-hole URL field."
+  },
+  "optionsHintUrl": {
+    "message": "e.g. http://pi.hole or https://10.0.0.2:443. No trailing slash needed.",
+    "description": "Hint under the Pi-hole URL field."
+  },
+  "optionsLabelPassword": {
+    "message": "Pi-hole password (app password recommended)",
+    "description": "Label for the password field."
+  },
+  "optionsHintPassword": {
+    "message": "Pi-hole v6 lets you generate dedicated app passwords under Settings → Web interface / API → Application password. Use one of those here — it bypasses 2FA/TOTP and stays valid even if you rotate your main login. Leave empty if your Pi-hole has no password configured.",
+    "description": "Hint under the password field."
+  },
+  "optionsLabelClientIp": {
+    "message": "Your client IP (optional)",
+    "description": "Label for the client IP field."
+  },
+  "optionsHintClientIp": {
+    "message": "If set, only blocked queries from this IP are considered. Leave blank to use all clients.",
+    "description": "Hint under the client IP field."
+  },
+  "optionsDetectIp": {
+    "message": "Detect from Pi-hole",
+    "description": "Detect-IP button."
+  },
+  "optionsLabelScanWindow": {
+    "message": "Scan window (seconds)",
+    "description": "Label for the scan window field."
+  },
+  "optionsHintScanWindow": {
+    "message": "How far back to look for blocked queries when the popup opens.",
+    "description": "Hint under the scan window field."
+  },
+  "optionsLabelLanguage": {
+    "message": "Language",
+    "description": "Label for the UI language dropdown."
+  },
+  "optionsLanguageAuto": {
+    "message": "Automatic (follow browser)",
+    "description": "First option of the language dropdown."
+  },
+  "optionsHintLanguage": {
+    "message": "Default follows your browser locale. Override if you'd rather pick the language explicitly. Changing this reloads the settings page.",
+    "description": "Hint under the language dropdown."
+  },
+  "optionsLabelShowBadge": {
+    "message": "Show failure count badge on toolbar icon",
+    "description": "Checkbox label for the toolbar badge."
+  },
+  "optionsLabelStrictMatch": {
+    "message": "Only suggest domains the browser actually requested in this tab",
+    "description": "Checkbox label for tab-scoped filtering."
+  },
+  "optionsHintStrictMatch": {
+    "message": "Recommended. Filters out unrelated DNS noise from other apps (Slack, WhatsApp, Spotify, OS telemetry, …) that share your Pi-hole client IP. Turn off to see every blocked query from your IP in the time window — useful for debugging, noisy in normal use.",
+    "description": "Hint under the strict-match checkbox."
+  },
+  "optionsSave": {
+    "message": "Save",
+    "description": "Save button."
+  },
+  "optionsTestConnection": {
+    "message": "Test connection",
+    "description": "Test-connection button."
+  },
+  "optionsRecentTitle": {
+    "message": "Recently allowed",
+    "description": "Section heading for the recently-allowed list."
+  },
+  "optionsRecentEmpty": {
+    "message": "Nothing allowed yet.",
+    "description": "Empty state for the recently-allowed list."
+  },
+  "optionsRecentUndo": {
+    "message": "Undo",
+    "description": "Undo button next to a recently-allowed entry."
+  },
+  "optionsMutedTitle": {
+    "message": "Muted suggestions",
+    "description": "Section heading for the muted-domain list."
+  },
+  "optionsMutedEmpty": {
+    "message": "No domains muted.",
+    "description": "Empty state for the muted-domain list."
+  },
+  "optionsMutedUnmute": {
+    "message": "Unmute",
+    "description": "Unmute button next to a muted entry."
+  },
+  "optionsRecentMeta": {
+    "message": "$KIND$ · $WHEN$",
+    "description": "Meta line under each recently-allowed entry.",
+    "placeholders": {
+      "kind": { "content": "$1" },
+      "when": { "content": "$2" }
+    }
+  },
+  "optionsStatusSaved": {
+    "message": "Settings saved.",
+    "description": "Shown after successful save."
+  },
+  "optionsStatusTesting": {
+    "message": "Testing…",
+    "description": "Shown while the connection test runs."
+  },
+  "optionsStatusSetUrlFirst": {
+    "message": "Set the Pi-hole URL first.",
+    "description": "Shown when Test/Detect is clicked without a URL."
+  },
+  "optionsStatusTestOk": {
+    "message": "Connected. Got $N$ recent queries in the last 60 s.",
+    "description": "Shown after a successful test.",
+    "placeholders": {
+      "n": { "content": "$1" }
+    }
+  },
+  "optionsStatusGenericFailed": {
+    "message": "Failed: $MSG$",
+    "description": "Generic failure prefix.",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetecting": {
+    "message": "Detecting client IP…",
+    "description": "Shown while detecting the client IP."
+  },
+  "optionsStatusDetectSession": {
+    "message": "Detected client IP via session: $IP$. Click Save to keep it.",
+    "description": "Shown after detection via session endpoint.",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetectProbe": {
+    "message": "Detected client IP via DNS probe: $IP$. Click Save to keep it.",
+    "description": "Shown after detection via DNS probe.",
+    "placeholders": {
+      "ip": { "content": "$1" }
+    }
+  },
+  "optionsStatusDetectFailed": {
+    "message": "Could not auto-detect. Is Pi-hole the DNS resolver for this machine? You can enter the IP manually.",
+    "description": "Shown when the DNS probe could not be located."
+  },
+  "optionsStatusProbeNoIp": {
+    "message": "Probe found but client IP missing from response.",
+    "description": "Shown when the probe entry has no client IP."
+  },
+  "optionsStatusUndoFailed": {
+    "message": "Undo failed: $MSG$",
+    "description": "Shown when removing an allow entry fails.",
+    "placeholders": {
+      "msg": { "content": "$1" }
+    }
+  }
+}

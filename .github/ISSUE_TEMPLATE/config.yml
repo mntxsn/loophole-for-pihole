@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Pi-hole support (not this extension)
+    url: https://discourse.pi-hole.net/
+    about: For questions about Pi-hole itself (setup, blocklists, FTL, etc.), please ask on the official Pi-hole forum.
+  - name: Mozilla add-ons review questions
+    url: https://discourse.mozilla.org/c/add-ons/35
+    about: For questions about AMO listing, signing, or extension review.

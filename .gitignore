@@ -1,0 +1,24 @@
+# Build output
+dist/
+*.zip
+*.xpi
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (in case anything is added later)
+node_modules/
+
+# web-ext run artifacts
+web-ext-artifacts/
+.web-ext-storage/
+
+# claude
+.claude/

@@ -1,0 +1,99 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly
+title: "[bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! A few notes before you start:
+
+        - This tracker is for the **Loophole for Pi-hole extension only**, not Pi-hole itself.
+          For Pi-hole questions please use https://discourse.pi-hole.net/.
+        - Please search existing issues first; duplicates may be closed.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug.
+      placeholder: e.g. "The popup shows 0 suggestions even though the page is clearly broken."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Step-by-step instructions to reproduce the bug.
+      placeholder: |
+        1. Open https://example.com
+        2. Click the toolbar icon
+        3. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: input
+    id: ext-version
+    attributes:
+      label: Extension version
+      placeholder: e.g. 0.1.0 (visible in about:addons)
+    validations:
+      required: true
+
+  - type: input
+    id: firefox-version
+    attributes:
+      label: Firefox version
+      placeholder: e.g. 124.0.1 (about:support → Application Basics)
+    validations:
+      required: true
+
+  - type: input
+    id: pihole-version
+    attributes:
+      label: Pi-hole version
+      placeholder: e.g. v6.0.5 (Pi-hole dashboard → Settings → System)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors / logs
+      description: |
+        Open `about:debugging#/runtime/this-firefox` → Loophole for Pi-hole → **Inspect**.
+        Paste any red errors from the popup, background, or options console here.
+      render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Sanity checks
+      options:
+        - label: I verified my Pi-hole URL works in a regular browser tab
+          required: true
+        - label: I used a Pi-hole **app password** (not the main Web UI password)
+          required: false
+        - label: I tried with the "Only suggest domains the browser actually requested" setting both on and off
+          required: false

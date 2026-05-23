@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loophole for Pi-hole</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="title">
+      <strong data-i18n="extensionName">Loophole for Pi-hole</strong>
+      <span id="page-host" class="muted"></span>
+    </div>
+    <button id="refresh" class="icon-btn" data-i18n-title="popupRefreshTitle" title="Refresh">↻</button>
+  </header>
+
+  <div id="status" class="status" hidden></div>
+
+  <div id="reload-bar" class="reload-bar" hidden>
+    <span data-i18n="popupReloadBarText">Allowlist updated. Reload page to test.</span>
+    <button id="reload-page" class="primary-small" data-i18n="popupReloadTab">Reload tab</button>
+  </div>
+
+  <section id="empty" class="empty" hidden>
+    <p data-i18n="popupEmptyTitle">No suggestions yet.</p>
+    <p class="muted" data-i18n="popupEmptyHint">Reload the page that looks broken, then reopen this popup.</p>
+  </section>
+
+  <ul id="suggestions" class="suggestions"></ul>
+
+  <form id="manual-add" class="manual-add">
+    <input type="text" id="manual-input" data-i18n-placeholder="popupManualPlaceholder" placeholder="Add domain manually…" autocomplete="off">
+    <label class="manual-toggle">
+      <input type="checkbox" id="manual-wildcard">
+      <span data-i18n="popupManualWildcardLabel">*.site</span>
+    </label>
+    <button type="submit" class="primary-small" data-i18n="popupManualSubmit">Allow</button>
+  </form>
+
+  <footer>
+    <span id="meta" class="muted"></span>
+    <button id="open-options" class="link" data-i18n="popupSettings">Settings</button>
+  </footer>
+
+  <template id="suggestion-template">
+    <li class="suggestion">
+      <div class="row">
+        <div class="conf">
+          <span class="bar"><span class="bar-fill"></span></span>
+          <span class="pct"></span>
+        </div>
+        <div class="main">
+          <div class="domain"></div>
+          <div class="reasons muted"></div>
+          <label class="wildcard-toggle" hidden>
+            <input type="checkbox" class="wildcard-cb">
+            <span class="wildcard-label"></span>
+          </label>
+        </div>
+        <div class="actions">
+          <button class="allow"></button>
+          <button class="mute icon-btn">×</button>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
