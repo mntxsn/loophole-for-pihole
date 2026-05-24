@@ -53,4 +53,4 @@ Initial release.
   that share the Pi-hole client IP. Filtered-out count is shown in the popup
   footer ("N hidden (other apps)").
 
-[0.1.0]: https://github.com/REPLACE-ME/loophole-for-pihole/releases/tag/v0.1.0
+[0.1.0]: https://github.com/mntxsn/loophole-for-pihole/releases/tag/v0.1.0
