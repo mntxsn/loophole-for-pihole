@@ -7,6 +7,7 @@
 > *A loophole is a small opening in a wall. This extension makes those for you,
 > in your Pi-hole, only where you need them.*
 
+[![Get it on AMO](https://img.shields.io/amo/v/loophole-for-pi-hole?label=Mozilla%20Add-ons&color=ff7139)](https://addons.mozilla.org/firefox/addon/loophole-for-pi-hole/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Pi-hole](https://img.shields.io/badge/Pi--hole-v6%2B-red)
 ![Firefox](https://img.shields.io/badge/Firefox-142%2B-orange)
@@ -94,6 +95,12 @@ The trick is matching them up and ranking the matches sensibly.
 
 ## Install
 
+### From Mozilla Add-ons (recommended)
+
+→ **<https://addons.mozilla.org/firefox/addon/loophole-for-pi-hole/>**
+
+One click, signed by Mozilla, auto-updates.
+
 ### Temporary load (development / trying it out)
 
 1. Clone or download this repository
@@ -103,11 +110,15 @@ The trick is matching them up and ranking the matches sensibly.
 
 The extension stays loaded until you restart Firefox.
 
-### Persistent install (after AMO listing)
+### Self-packaging
 
-*Coming soon — `addons.mozilla.org` listing in progress.*
+`./scripts/build.sh` produces a `.zip` in `dist/` you can upload anywhere.
 
-To self-package right now: `./scripts/build.sh` produces a signed-ready `.zip`.
+### Add-on ID
+
+`loophole-for-pihole@local` — relevant if you're deploying via enterprise
+policies, blocking via `extensions.blocklist`, or referencing the extension
+from another tool.
 
 ## Setup
 
